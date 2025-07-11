@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutinas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FFFFFF; /* Blanco brillante */
+            --secondary-color: #0D0D0D; /* Negro brillante */
+            --accent-color: #B0B0B0; /* Gris metálico brillante */
+            --shadow-color: #333333; /* Gris oscuro para sombras */
+            --text-color: #FFFFFF;
+        }
+        body {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            font-family: 'Roboto Condensed', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://source.unsplash.com/1600x900/?gym,industrial,rusty');
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+            filter: grayscale(100%); /* Blanco y negro */
+        }
+        header {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-bottom: 5px solid var(--accent-color);
+            animation: slideIn 1s ease-out;
+            position: relative;
+            z-index: 10;
+        }
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4em;
+            color: var(--primary-color);
+            text-shadow: 3px 3px 5px #000, 0 0 15px var(--accent-color);
+            letter-spacing: 3px;
+            animation: glow 2s infinite alternate;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(13, 13, 13, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 20px var(--accent-color), inset 0 0 10px var(--shadow-color);
+            border: 2px solid var(--accent-color);
+            position: relative;
+            z-index: 10;
+            animation: slideIn 1s ease-out;
+        }
+        .motivational-quote {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border: 3px solid var(--accent-color);
+            border-radius: 5px;
+            text-shadow: 1px 1px 2px #000;
+            animation: type 3s steps(40) infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid var(--accent-color);
+        }
+        .routine, .water {
+            margin: 30px 0;
+            background: rgba(51, 51, 51, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid var(--accent-color);
+            box-shadow: inset 0 0 10px #000;
+            animation: slideIn 1s ease-out;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            color: var(--text-color);
+            border: 1px solid var(--accent-color);
+        }
+        a:not(.ig-link) {
+            padding: 10px;
+            margin: 5px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 2px solid var(--accent-color);
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            font-family: 'Roboto Condensed', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        a:not(.ig-link):hover {
+            background-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--secondary-color);
+            transform: scale(1.1);
+        }
+        footer {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-top: 5px solid var(--accent-color);
+            color: var(--text-color);
+            margin-top: 20px;
+            font-family: 'Roboto Condensed', sans-serif;
+            position: relative;
+            z-index: 10;
+        }
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: var(--primary-color);
+            text-shadow: 0 0 5px var(--accent-color);
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 10px var(--accent-color); text-shadow: 3px 3px 5px #000, 0 0 10px var(--accent-color); }
+            to { box-shadow: 0 0 20px var(--accent-color); text-shadow: 3px 3px 5px #000, 0 0 15px var(--accent-color); }
+        }
+        @keyframes type {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rutinas</h1>
+    </header>
+    <div class="container">
+        <div class="motivational-quote" id="quote"></div>
+
+        <div class="water">
+            <h2>¡Agua, el combustible del hierro!</h2>
+            <p>Maxote te grita: ¡3-4 litros de agua al día! Sin agua, no hay músculo, Soldado.</p>
+        </div>
+
+        <div class="routine">
+            <h2>Rutinas pa’l Hierro de Maxote</h2>
+            <p>¡Maxote y Ronnie te traen estas rutinas pa’l fallo! Pesado, intenso y con puro fuego. ¡Yeah Buddy!</p>
+            <h3>Lunes – Pecho, Hombros, Tríceps</h3>
+            <ul>
+                <li>Press de banca plano con barra – 4x8-10 (pesado, al fallo)</li>
+                <li>Press inclinado con mancuernas – 4x10 (máximo peso)</li>
+                <li>Aperturas en banco inclinado – 3x12 (al fallo)</li>
+                <li>Cruces en polea – 3x12 (intensidad máxima)</li>
+                <li>Press militar con barra – 4x8 (pesado, al fallo)</li>
+                <li>Elevaciones laterales – 4x12 (máximo esfuerzo)</li>
+                <li>Pájaros (posterior) – 3x12 (al fallo)</li>
+                <li>Elevaciones frontales – 3x12 (fuerza total)</li>
+                <li>Press cerrado con barra – 4x10 (al fallo)</li>
+                <li>Fondos en paralelas (con peso) – 3x12 (sin piedad)</li>
+                <li>Extensión en polea (cuerda) – 3x15 (máxima intensidad)</li>
+                <li>Press francés – 3x12 (al fallo)</li>
+            </ul>
+            <h3>Martes – Espalda, Bíceps, Antebrazos</h3>
+            <ul>
+                <li>Dominadas – 4x al fallo (máximo peso)</li>
+                <li>Remo con barra – 4x10 (pesado, al fallo)</li>
+                <li>Jalón al pecho – 4x12 (intensidad máxima)</li>
+                <li>Remo en polea – 3x12 (al fallo)</li>
+                <li>Curl con barra Z – 4x10 (al fallo)</li>
+                <li>Curl tipo martillo – 3x12 (máximo peso)</li>
+                <li>Curl inclinado con mancuerna – 3x12 (al fallo)</li>
+                <li>Curl en polea baja – 3x12 (fuerza total)</li>
+                <li>Curl invertido (barra Z) – 3x15 (intensidad máxima)</li>
+                <li>Curl de muñeca sentado – 3x20 (al fallo)</li>
+                <li>Agarre con mancuerna (isométrico) – 3x30s (máximo esfuerzo)</li>
+            </ul>
+            <h3>Miércoles – Femoral y Cuádriceps</h3>
+            <ul>
+                <li>Peso muerto rumano – 4x10 (pesado, al fallo)</li>
+                <li>Curl femoral en máquina – 4x12 (al fallo)</li>
+                <li>Buenos días con barra – 3x12 (máxima intensidad)</li>
+                <li>Elevaciones de talones – 3x15 (fuerza total)</li>
+                <li>Sentadilla profunda – 4x8-10 (pesado, al fallo)</li>
+                <li>Prensa 45° – 4x12 (máximo peso)</li>
+                <li>Extensiones de cuádriceps – 4x15 (al fallo)</li>
+                <li>Zancadas con barra – 3x12 por pierna (intensidad máxima)</li>
+            </ul>
+            <h3>Jueves – Pecho, Tríceps, Hombros</h3>
+            <ul>
+                <li>Press inclinado con barra – 4x10 (pesado, al fallo)</li>
+                <li>Press plano con mancuernas – 4x12 (al fallo)</li>
+                <li>Aperturas en máquina o polea – 3x15 (máxima intensidad)</li>
+                <li>Cruces en polea alta – 3x12 (fuerza total)</li>
+                <li>Rompecráneos (extensión con barra Z) – 4x10 (al fallo)</li>
+                <li>Fondos en banco – 4x12 (máximo esfuerzo)</li>
+                <li>Patada con mancuerna – 3x15 (al fallo)</li>
+                <li>Extensión de tríceps por encima de la cabeza – 3x12 (intensidad máxima)</li>
+                <li>Arnold press – 4x10 (pesado, al fallo)</li>
+                <li>Elevaciones laterales – 4x12 (al fallo)</li>
+                <li>Encogimientos con barra (trapecio) – 4x15 (máximo peso)</li>
+                <li>Face pulls – 3x12 (fuerza total)</li>
+            </ul>
+            <h3>Viernes – Espalda, Bíceps, Antebrazos</h3>
+            <ul>
+                <li>Dominadas agarre neutro – 4x al fallo (máximo peso)</li>
+                <li>Remo con mancuerna – 4x12 (al fallo)</li>
+                <li>Pullover con mancuerna – 3x15 (intensidad máxima)</li>
+                <li>Peso muerto tradicional – 4x8 (pesado, al fallo)</li>
+                <li>Curl 21’s – 3 series (al fallo)</li>
+                <li>Curl concentrado – 3x12 (máximo peso)</li>
+                <li>Curl en banco predicador – 4x10 (al fallo)</li>
+                <li>Curl en polea alta – 3x12 (fuerza total)</li>
+                <li>Curl inverso – 3x15 (intensidad máxima)</li>
+                <li>Agarre con mancuerna (isométrico 30 seg) – 3x30s (máximo esfuerzo)</li>
+            </ul>
+            <h3>Sábado – Pierna Completa</h3>
+            <ul>
+                <li>Sentadilla frontal – 4x10 (pesado, al fallo)</li>
+                <li>Prensa 45° – 4x15 (máximo peso)</li>
+                <li>Peso muerto rumano – 4x12 (al fallo)</li>
+                <li>Zancadas caminando con mancuernas – 4x12 por pierna (intensidad máxima)</li>
+                <li>Curl femoral – 4x12 (al fallo)</li>
+                <li>Extensiones de cuádriceps – 4x15 (máximo esfuerzo)</li>
+                <li>Hip thrust – 4x12 (pesado, al fallo)</li>
+                <li>Elevaciones de talones de pie – 5x20 (intensidad máxima)</li>
+                <li>Gemelos sentado – 4x15 (fuerza total)</li>
+                <li>Abductores en máquina – 3x15 (al fallo)</li>
+            </ul>
+            <p>¡Descansa el domingo, pero sigue tomando agua como Maxote!</p>
+        </div>
+
+        <div>
+            <a href="index.html">Volver a La Casa de Maxote</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 La Casa de Maxote. Todos los derechos reservados.</p>
+        <p>Crada con fines de entretinimiento y para que vean algunos de los conocimientos de maxote.</p>
+        <p>Sígueme en Instagram <a href="https://www.instagram.com/maxvaldzzz" class="ig-link">maxvaldzzz</a></p>
+    </footer>
+
+    <script>
+        // Frases motivadoras dinámicas con humor
+        const quotes = [
+            "¡Light weight, baby! Levanta como Ronnie, Soldado.",
+            "¡Flacos aquí no! Come como bestia y brilla como Maxote.",
+            "¡Yeah Buddy! El gym es tu guerra, rómpela al fallo!",
+            "¡Vivan las mamás solteras! Levanta pesado y brilla.",
+            "¡Agua, prota y puro hierro! ¡Eso es La Casa de Maxote!"
+        ];
+        let quoteIndex = 0;
+        function updateQuote() {
+            document.getElementById('quote').innerText = quotes[quoteIndex];
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+        }
+        updateQuote();
+        setInterval(updateQuote, 5000);
+    </script>
+</body>
+</html>
